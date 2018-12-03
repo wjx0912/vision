@@ -32,6 +32,8 @@
 #include <opencv2/core/core.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 
+#define WM_SHOW_MAT				(WM_USER + 2850)
+#define PK_MAX_MAT_CONTROL			(128)
 
 ///<summary>PkMatToGDI Class
 /// This class provides a method to fast draw (fitting or stretching) an OpenCV Mat image directly into MFC Gui.
