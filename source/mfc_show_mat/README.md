@@ -25,7 +25,7 @@
      m_gdis[1].SetDestination(GetDlgItem(IDC_MAT_CONTROL2), true);
 
      for (int i = 0; i < PK_MAX_MAT_CONTROL; i++) {
-       m_mats[i].release();
+   ​    m_mats[i].release();
      }
      ......
    }
@@ -34,10 +34,10 @@
 
    LRESULT Cmydialog::OnShowMat(WPARAM wParam, LPARAM lParam)
    {
-     int id = (int)wParam;
-     if (id < 0 || id >= PK_MAX_MAT_CONTROL)
-       return -1;
-    
+​     int id = (int)wParam;
+​     if (id < 0 || id >= PK_MAX_MAT_CONTROL || !GetSafeHwnd())
+​       return -1;
+​    
      cv::Mat m = m_mats[id];
      if (m.data && m.cols && m.rows) {
        m_gdis[id].DrawImg(m);
